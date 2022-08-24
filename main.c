@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define TAM_VETOR 10
+#define TAM_VETOR 100
 
 
 /*
@@ -28,6 +28,8 @@ int main()
 {
     printf("ZA WARUDO: \n\n");
     int v[1000];
+    insere_valores_no_vetor(v);
+    imprimir_vetor(v);
         
     return 0;
 }
