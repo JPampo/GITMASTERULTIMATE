@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define TAM_VETOR 10
+#define TAM_VETOR 100
 
 
 /*
