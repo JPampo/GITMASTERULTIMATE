@@ -6,6 +6,7 @@
 
 /*
  * Nome: insere_valores_no_vetor
+ * Função: Coloca valores randons para o vetor
  * Parametros: Vetor de inteiros
  * Retorno: nada
  */
@@ -16,48 +17,73 @@ void insere_valores_no_vetor(int vet[])
         vet[i] = rand() % 1000;
     }
 }
-
-void media_vetor(int vet[]){
+/*
+ * Nome: media_vetor
+ * Função: Calcula e imprime a média do vetor
+ * Parametros: Vetor de inteiros
+ * Retorno: nada
+ */
+void media_vetor(int vet[])
+{
     float soma=0,media;
-    for(int i=0;i<TAM_VETOR;i++){
+    for(int i=0; i<TAM_VETOR; i++)
+    {
         soma=vet[i]+soma;
     }
     media=soma/TAM_VETOR;
     printf("Valor da media: %.2f \n",media);
-    }
-
+}
+/*
+ * Nome: Imprimir Vetor
+ * Função: Imprime o vetor
+ * Parametros: Vetor de inteiros
+ * Retorno: nada
+ */
 void imprimir_vetor(int vet[])
 {
-    for(int i = 0; i < TAM_VETOR; i++){
+    for(int i = 0; i < TAM_VETOR; i++)
+    {
         printf("[%d] - %d\n", i, vet[i]);
     }
 
 }
-void mediana_vetor(int vet[]){
+/*
+ * Nome: mediana_vetor
+ * Função: Calcula e imprime a mediana do vetor
+ * Parametros: Vetor de inteiros
+ * Retorno: nada
+ */
+void mediana_vetor(int vet[])
+{
     float mediana;
-     mediana = ((float)vet[500]+ (float)vet[499])/2;
-     printf("Valor da mediana: %.2f \n", mediana);
+    mediana = ((float)vet[500]+ (float)vet[499])/2;
+    printf("Valor da mediana: %.2f \n", mediana);
 
 
 }
+/*
+ * Nome: bubble
+ * Função: Realiza um bubble sort no vetor
+ * Parametros: Vetor de inteiros
+ * Retorno: nada
+ */
+void bubble(int arr[], int num){
+int x, y, temp;
 
-void bubble(int arr[], int num)     //// função bubble sorting
+for(x = 0; x < num - 1; x++)
 {
-    int x, y, temp;
 
-    for(x = 0; x < num - 1; x++){
+    for(y = 0; y < num - x - 1; y++)
+    {
 
-        for(y = 0; y < num - x - 1; y++){
+        if(arr[y] > arr[y + 1])
+        {
 
-            if(arr[y] > arr[y + 1]){
+            temp = arr[y];
 
-                temp = arr[y];
+            arr[y] = arr[y + 1];
 
-                arr[y] = arr[y + 1];
-
-                arr[y + 1] = temp;
-
-            }
+            arr[y + 1] = temp;
 
         }
 
@@ -65,25 +91,38 @@ void bubble(int arr[], int num)     //// função bubble sorting
 
 }
 
+}
+/*
+ * Nome: maior_valor
+ * Função: Calcula e imprime a maior valor do vetor
+ * Parametros: Vetor de inteiros
+ * Retorno: nada
+ */
 void maior_valor (int vetor[])
 {
-int Contador,maior=0;
-for(Contador = 0;Contador<TAM_VETOR;Contador++)
-{
-if(vetor[Contador]>maior)
-maior = vetor[Contador];
+    int Contador,maior=0;
+    for(Contador = 0; Contador<TAM_VETOR; Contador++)
+    {
+        if(vetor[Contador]>maior)
+            maior = vetor[Contador];
+    }
+    printf("Maior numero: %d\n",maior);
 }
-printf("Maior numero: %d\n",maior);
-}
+/*
+ * Nome: menor valor
+ * Função: Calcula e imprime a maior valor do vetor
+ * Parametros: Vetor de inteiros
+ * Retorno: nada
+ */
 void menor_valor (int vetor[])
 {
-int Contador,menor=1000;
-for(Contador = 0;Contador<TAM_VETOR;Contador++)
-{
-if(vetor[Contador]<menor)
-menor = vetor[Contador];
-}
-printf("Menor numero: %d\n",menor);
+    int Contador,menor=1000;
+    for(Contador = 0; Contador<TAM_VETOR; Contador++)
+    {
+        if(vetor[Contador]<menor)
+            menor = vetor[Contador];
+    }
+    printf("Menor numero: %d\n",menor);
 }
 int main()
 {
@@ -99,6 +138,8 @@ int main()
     return 0;
 
 }
+
+
 
 
 
