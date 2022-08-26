@@ -23,13 +23,21 @@ void media_vetor(int vet[]){
         soma=vet[i]+soma;
     }
     media=soma/TAM_VETOR;
-    printf("Valor da media: %f",media);
+    printf("Valor da media: %.2f \n",media);
     }
 
 void imprimir_vetor(int vet[])
 {
-    for(int i = 0; i < TAM_VETOR; i++)
+    for(int i = 0; i < TAM_VETOR; i++){
         printf("[%d] - %d\n", i, vet[i]);
+    }
+
+}
+void mediana_vetor(int vet[]){
+    float mediana;
+     mediana = ((float)vet[500]+ (float)vet[499])/2;
+     printf("Valor da mediana: %.2f \n", mediana);
+
 
 }
 
@@ -58,6 +66,7 @@ void bubble(int arr[], int num)     //// função bubble sorting
 }
 
 
+
 int main()
 {
     printf("ZA WARUDO: \n\n");
@@ -66,6 +75,6 @@ int main()
     bubble(v,1000);
     imprimir_vetor(v);
     media_vetor(v);
-
+    mediana_vetor(v);
     return 0;
 }
