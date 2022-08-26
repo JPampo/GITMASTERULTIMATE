@@ -17,6 +17,15 @@ void insere_valores_no_vetor(int vet[])
     }
 }
 
+void media_vetor(int vet[]){
+    float soma=0,media;
+    for(int i=0;i<TAM_VETOR;i++){
+        soma=vet[i]+soma;
+    }
+    media=soma/TAM_VETOR;
+    printf("Valor da media: %f",media);
+    }
+
 void imprimir_vetor(int vet[])
 {
     for(int i = 0; i < TAM_VETOR; i++)
@@ -55,6 +64,7 @@ int main()
     int v[1000];
     insere_valores_no_vetor(v);
     imprimir_vetor(v);
+    media_vetor(v);
     bubble(v,1000);
     imprimir_vetor(v);
 
