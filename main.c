@@ -13,9 +13,10 @@ void insere_valores_no_vetor(int vet[])
 {
     for(int i = 0; i < TAM_VETOR; i++)
     {
-        vet[i] = rand() % 5000;
+        vet[i] = rand() % 1000;
     }
 }
+
 void media_vetor(int vet[]){
     float soma=0,media;
     for(int i=0;i<TAM_VETOR;i++){
@@ -32,6 +33,30 @@ void imprimir_vetor(int vet[])
 
 }
 
+void bubble(int arr[], int num)     //// função bubble sorting
+{
+    int x, y, temp;
+
+    for(x = 0; x < num - 1; x++){
+
+        for(y = 0; y < num - x - 1; y++){
+
+            if(arr[y] > arr[y + 1]){
+
+                temp = arr[y];
+
+                arr[y] = arr[y + 1];
+
+                arr[y + 1] = temp;
+
+            }
+
+        }
+
+    }
+
+}
+
 
 int main()
 {
@@ -40,6 +65,8 @@ int main()
     insere_valores_no_vetor(v);
     imprimir_vetor(v);
     media_vetor(v);
-        
+    bubble(v,1000);
+    imprimir_vetor(v);
+
     return 0;
 }
