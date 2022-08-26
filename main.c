@@ -65,8 +65,26 @@ void bubble(int arr[], int num)     //// função bubble sorting
 
 }
 
-
-
+void maior_valor (int vetor[])
+{
+int Contador,maior=0;
+for(Contador = 0;Contador<TAM_VETOR;Contador++)
+{
+if(vetor[Contador]>maior)
+maior = vetor[Contador];
+}
+printf("Maior numero: %d\n",maior);
+}
+void menor_valor (int vetor[])
+{
+int Contador,menor=1000;
+for(Contador = 0;Contador<TAM_VETOR;Contador++)
+{
+if(vetor[Contador]<menor)
+menor = vetor[Contador];
+}
+printf("Menor numero: %d\n",menor);
+}
 int main()
 {
     printf("ZA WARUDO: \n\n");
@@ -74,7 +92,13 @@ int main()
     insere_valores_no_vetor(v);
     bubble(v,1000);
     imprimir_vetor(v);
+    maior_valor(v);
+    menor_valor(v);
     media_vetor(v);
     mediana_vetor(v);
     return 0;
+
 }
+
+
+
