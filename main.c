@@ -64,7 +64,7 @@ void mediana_vetor(int vet[])
 /*
  * Nome: bubble
  * Função: Realiza um bubble sort no vetor
- * Parametros: Vetor de inteiros
+ * Parametros: Vetor de inteiros,Tamanho do Vetor
  * Retorno: nada
  */
 void bubble(int arr[], int num){
@@ -127,9 +127,9 @@ void menor_valor (int vetor[])
 int main()
 {
     printf("ZA WARUDO: \n\n");
-    int v[1000];
+    int v[TAM_VETOR];
     insere_valores_no_vetor(v);
-    bubble(v,1000);
+    bubble(v,TAM_VETOR);
     imprimir_vetor(v);
     maior_valor(v);
     menor_valor(v);
