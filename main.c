@@ -1,4 +1,4 @@
-#include <iostream>
+
 #include <stdio.h>
 #include <stdlib.h>
 #define TAM_VETOR 1000
@@ -161,20 +161,27 @@ void menor_valor (int vetor[])
 }
 int main()
 {
-    printf("ZA WARUDO: \n\n");
+    int sorteador;
     int v[TAM_VETOR];
     insere_valores_no_vetor(v);
+
+    printf("Digite 1 para fazer um bubble sort, digite 2 para faz um quick sort:\n");
+    do{
+    scanf("%d",&sorteador);
+    }while(sorteador != 1 && sorteador != 2);
+    if(sorteador == 1)
     bubble(v,TAM_VETOR);
+    else
+    quicksort(v, 1, 1000);
     imprimir_vetor(v);
     maior_valor(v);
     menor_valor(v);
     media_vetor(v);
     mediana_vetor(v);
-    quicksort(v, 1, 1000);
-
     return 0;
 
 }
+
 
 
 
