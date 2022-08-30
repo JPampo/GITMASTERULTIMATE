@@ -1,9 +1,38 @@
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-
 #define TAM_VETOR 1000
 
-
+void quicksort(int vet[], int began, int end)
+{
+	int i, j, pivo, aux;
+	i = began;
+	j = end-1;
+	pivo = vet[(began + end) / 2];
+	while(i <= j)
+	{
+		while(vet[i] < pivo && i < end)
+		{
+			i++;
+		}
+		while(vet[j] > pivo && j > began)
+		{
+			j--;
+		}
+		if(i <= j)
+		{
+			aux = vet[i];
+			vet[i] = vet[j];
+			vet[j] = aux;
+			i++;
+			j--;
+		}
+	}
+	if(j > began)
+		quicksort(vet, began, j+1);
+	if(i < end)
+		quicksort(vet, i, end);
+}
 /*
  * Nome: insere_valores_no_vetor
  * Função: Coloca valores randons para o vetor
@@ -32,7 +61,10 @@ void media_vetor(int vet[])
     }
     media=soma/TAM_VETOR;
     printf("Valor da media: %.2f \n",media);
-}
+
+    }
+
+
 /*
  * Nome: Imprimir Vetor
  * Função: Imprime o vetor
@@ -45,6 +77,7 @@ void imprimir_vetor(int vet[])
     {
         printf("[%d] - %d\n", i, vet[i]);
     }
+
 
 }
 /*
@@ -90,8 +123,9 @@ for(x = 0; x < num - 1; x++)
     }
 
 }
-
 }
+
+
 /*
  * Nome: maior_valor
  * Função: Calcula e imprime a maior valor do vetor
@@ -123,6 +157,7 @@ void menor_valor (int vetor[])
             menor = vetor[Contador];
     }
     printf("Menor numero: %d\n",menor);
+
 }
 int main()
 {
@@ -135,6 +170,8 @@ int main()
     menor_valor(v);
     media_vetor(v);
     mediana_vetor(v);
+    quicksort(v, 1, 1000);
+
     return 0;
 
 }
